@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import styled from 'styled-components';
 import './App.css';
+import { Chain } from "./pages/Chain";
+import { Colors } from "@blueprintjs/core";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const AppOutterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  
+  &.bp3-dark {
+    background-color: ${Colors.DARK_GRAY4};
+  }
+`;
+const AppInnerContainer = styled.div`
+  max-width: 1100px;
+  min-width: 720px;
+`;
+
+const App: React.FunctionComponent = () => (
+  <AppOutterContainer className="bp3-dark">
+    <AppInnerContainer>
+      <Chain/>
+    </AppInnerContainer>
+  </AppOutterContainer>
+);
 
 export default App;
